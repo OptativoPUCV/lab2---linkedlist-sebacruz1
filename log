@@ -50,3 +50,9 @@ Sun 26 Mar 2023 02:16:10 PM UTC:
  tests:  10|2
 total_score: 45/70
 341fc5e
+Sun 26 Mar 2023 02:21:20 PM UTC: 
+ list.c | 37 +++++++++++++++++++++++++++++++++----
+ 1 file changed, 33 insertions(+), 4 deletions(-)
+ tests:  12|0
+total_score: 70/70
+c0bab10
