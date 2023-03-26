@@ -19,8 +19,8 @@ struct List {
 
 typedef List List;
 
-Node * createNode(void * data) {
-    Node * new = (Node *)malloc(sizeof(Node));
+Node *createNode(void *data) {
+    Node *new = (Node *)malloc(sizeof(Node));
     assert(new != NULL);
     new->data = data;
     new->prev = NULL;
@@ -28,19 +28,18 @@ Node * createNode(void * data) {
     return new;
 }
 
-List * createList() 
+List *createList() 
 {
   List *ListAux = (List *)malloc(sizeof(List));
 
   ListAux->head = NULL;
   ListAux->tail = NULL;
   ListAux->current = NULL;
-
   
   return ListAux;
 }
 
-void * firstList(List * list) 
+void *firstList(List *list) 
 {
   if (list -> head == NULL) return NULL;
 
@@ -50,7 +49,7 @@ void * firstList(List * list)
 
 }
 
-void * nextList(List * list) 
+void *nextList(List *list) 
 { 
   if (list->current == NULL) return NULL;
 
@@ -61,7 +60,7 @@ void * nextList(List * list)
   return list->current->data;
 }
 
-void * lastList(List * list) 
+void *lastList(List *list) 
 {
   list->current = list->tail;
 
@@ -69,7 +68,7 @@ void * lastList(List * list)
 
 }
 
-void * prevList(List * list) 
+void *prevList(List *list) 
 {
   if (list->current == NULL) return NULL;
 
@@ -80,7 +79,7 @@ void * prevList(List * list)
   return list->current->data;
 }
 
-void pushFront(List * list, void * data) 
+void pushFront(List *list, void *data) 
 {
   Node *n = createNode(data);
   if (list->head == NULL)
@@ -97,13 +96,13 @@ void pushFront(List * list, void * data)
   }
 }
 
-void pushBack(List * list, void * data) 
+void pushBack(List *list, void *data) 
 {
   list->current = list->tail;
   pushCurrent(list,data);
 }
 
-void pushCurrent(List * list, void * data) 
+void pushCurrent(List *list, void *data) 
 {
   Node *n = createNode(data);
 
@@ -115,17 +114,19 @@ void pushCurrent(List * list, void * data)
   list->current->next = n;
 }
 
-void * popFront(List * list) {
-    list->current = list->head;
-    return popCurrent(list);
+void *popFront(List *list) 
+{
+  list->current = list->head;
+  return popCurrent(list);
 }
 
-void * popBack(List * list) {
-    list->current = list->tail;
-    return popCurrent(list);
+void *popBack(List *list) 
+{
+  list->current = list->tail;
+  return popCurrent(list);
 }
 
-void *popCurrent(List * list) 
+void *popCurrent(List *list) 
 {
   Node *aux = list->current;
 
@@ -148,8 +149,10 @@ void *popCurrent(List * list)
 
 }
 
-void cleanList(List * list) {
-    while (list->head != NULL) {
-        popFront(list);
-    }
+void cleanList(List *list) 
+{
+  while (list->head != NULL) 
+  {
+      popFront(list);
+  }
 }

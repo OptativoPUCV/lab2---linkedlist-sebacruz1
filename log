@@ -56,3 +56,9 @@ Sun 26 Mar 2023 02:21:20 PM UTC:
  tests:  12|0
 total_score: 70/70
 c0bab10
+Sun 26 Mar 2023 02:25:12 PM UTC: 
+ list.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+ tests:  12|0
+total_score: 70/70
+9abfdc5
