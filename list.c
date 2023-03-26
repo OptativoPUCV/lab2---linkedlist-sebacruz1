@@ -40,7 +40,15 @@ List * createList()
   return ListAux;
 }
 
-void * firstList(List * list) {
+void * firstList(List * list) 
+{
+  if (list -> head == NULL) return NULL;
+
+  list -> current = list -> head;
+  
+    return list -> head -> data;;
+}
+
     return NULL;
 }
 
