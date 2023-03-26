@@ -44,14 +44,21 @@ void * firstList(List * list)
 {
   if (list -> head == NULL) return NULL;
 
-  list -> current = list -> head;
+  list->current = list->head;
   
-  return list -> head -> data;;
+  return list->head->data;;
 
 }
 
-void * nextList(List * list) {
-    return NULL;
+void * nextList(List * list) 
+{ 
+  if (list->current == NULL) return NULL;
+
+  if (list->current == list->tail) return NULL;
+
+  list->current = list->current->next;
+  
+  return list->current->data;
 }
 
 void * lastList(List * list) {
